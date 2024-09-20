@@ -38,9 +38,12 @@ impl wasm::traits::HttpContext for HelloWorld {
             }
         }
 
+        // setting a value for the x-was-filter header
+        let val1 = "hello123";
+
         self.set_http_request_header("x-hello", Some(&format!("Hello world from {}", 
 authority)));
-        self.add_http_response_header("x-wasm-filter", "hello");
+        self.add_http_response_header("x-wasm-filter", val1);
 
         wasm::types::Action::Continue
     }
