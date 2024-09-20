@@ -15,4 +15,4 @@ spec:
         type: HTTP
         http:
           url: https://raw.githubusercontent.com/theemadnes/envoy-gateway-wasm-demo-01/main/ef_wasm_rust_01/ef_wasm_rust_01.wasm
-          sha256: 447340bb270f1425cc9f2e9159bf81361f18fd5681613fd6d25cf71009ee3012
+          sha256: b2aef46f57d0b719d19058d8b2e898335022c5081009890eb01a241e6af9b636
