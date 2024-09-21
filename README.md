@@ -17,3 +17,26 @@ export GATEWAY_HOST=$(kubectl -n eg get gateway/eg -o jsonpath='{.status.address
 curl --verbose --header "Host: www.example.com" http://$GATEWAY_HOST/get
 
 ```
+
+### scratch commands
+
+```
+rustup target add wasm32-unknown-unknown
+cargo init --lib
+
+### add this to Cargo.toml
+[dependencies]
+log = "0.4.8"
+proxy-wasm = "0.1.0" # The Rust SDK for proxy-wasm
+
+[lib]
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+
+cargo build --target wasm32-unknown-unknown --release
+cp target/wasm32-unknown-unknown/release/ef_wasm_rust_add_response_header.wasm ./
+
+shasum -a 256 ef_wasm_rust_add_response_header.wasm
+
+```

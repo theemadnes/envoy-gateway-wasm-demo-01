@@ -9,10 +9,17 @@ spec:
       kind: HTTPRoute
       name: backend
   wasm:
-    - name: wasm-filter
-      rootID: ef_wasm_rust_01
+    - name: wasm-filter-add-audience-header
+      rootID: ef_wasm_rust_01_add_audience_header
       code:
         type: HTTP
         http:
           url: https://raw.githubusercontent.com/theemadnes/envoy-gateway-wasm-demo-01/main/ef_wasm_rust_01/ef_wasm_rust_01.wasm
           sha256: 447340bb270f1425cc9f2e9159bf81361f18fd5681613fd6d25cf71009ee3012
+    - name: wasm-filter-add-response-header
+      rootID: ef_wasm_rust_add_response_header
+      code:
+        type: HTTP
+        http:
+          url: https://raw.githubusercontent.com/theemadnes/envoy-gateway-wasm-demo-01/main/ef_wasm_rust_add_response_header/ef_wasm_rust_add_response_header.wasm
+          sha256: 729728a4b4a60b14f7035636fb4a58c9adebc402d8336e65d5fe8797142f555e
